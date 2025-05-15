@@ -16,6 +16,7 @@ namespace GME1003GoblinDanceParty
         private int _numStars;          //how many stars?
         private List<int> _starsX;      //list of star x-coordinates
         private List<int> _starsY;      //list of star y-coordinates
+        private List<int> _starsRotate; //list of intergers for the stars rotating
 
         private Texture2D _starSprite;  //the sprite image for our star
         private Texture2D _NewBG;   //New background for the dance party
@@ -51,6 +52,7 @@ namespace GME1003GoblinDanceParty
             _starScale = _rng.Next(50, 100) / 200f; //this will affect the size of the stars
             _starTransparency = _rng.Next(25, 101)/100f;   //star transparency
             _starRotation = _rng.Next(0, 101) / 100f;       //star rotation
+            _starsRotate = new List<int>();
 
             //use a separate for loop for each list - for practice
             //List of X coordinates
@@ -72,6 +74,10 @@ namespace GME1003GoblinDanceParty
             //ToDo: List of transparency values
 
             //ToDo: List of rotation values
+            for (int i = 0; i < _numStars; i++)
+            {
+                _starsRotate.Add(_rng.Next(0, _numStars));
+            }
 
 
             base.Initialize();
