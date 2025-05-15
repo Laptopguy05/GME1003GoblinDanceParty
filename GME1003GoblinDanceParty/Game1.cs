@@ -18,6 +18,7 @@ namespace GME1003GoblinDanceParty
         private List<int> _starsY;      //list of star y-coordinates
 
         private Texture2D _starSprite;  //the sprite image for our star
+        private Texture2D _NewBG;   //New background for the dance party
 
         private Random _rng;            //for all our random number needs
         private Color _starColor;       //let's have fun with colour!!
@@ -40,8 +41,9 @@ namespace GME1003GoblinDanceParty
 
         protected override void Initialize()
         {
-            _rng = new Random();        //finish setting up our Randon 
-            _numStars = 100;              //this would be better as a random number between 100 and 300
+            _rng = new Random();        //finish setting up our Random
+
+            _numStars = _rng.Next(50, 301);              //this would be better as a random number between 100 and 300
             _starsX = new List<int>();  //stars X coordinate
             _starsY = new List<int>();  //stars Y coordinate
 
@@ -54,7 +56,7 @@ namespace GME1003GoblinDanceParty
             //List of X coordinates
             for (int i = 0; i < _numStars; i++) 
             { 
-                _starsX.Add(_rng.Next(0, 801)); //all star x-coordinates are between 0 and 801
+                _starsX.Add(_rng.Next(0, 801)); //all star x-coordinates are between 0 and 801 
             }
 
             //List of Y coordinates
@@ -81,6 +83,7 @@ namespace GME1003GoblinDanceParty
 
             //load out star sprite
             _starSprite = Content.Load<Texture2D>("starSprite");
+            _NewBG = Content.Load<Texture2D>("DiscoBG");
 
 
             //***This is for the goblin. Ignore it for now.
@@ -98,7 +101,7 @@ namespace GME1003GoblinDanceParty
                 Exit();
 
    
-            //***This is for the goblin. Ignore it for now.
+            //***This is for the goblin.
             goblin.Update(gameTime);
 
             base.Update(gameTime);
@@ -111,8 +114,8 @@ namespace GME1003GoblinDanceParty
             
             _spriteBatch.Begin();
 
-            //it would be great to have a background image here! 
-            //you could make that happen with a single Draw statement.
+            //background image:
+            
 
             //this is where we draw the stars...
             for (int i = 0; i < _numStars; i++) 
@@ -131,7 +134,7 @@ namespace GME1003GoblinDanceParty
 
 
 
-            //***This is for the goblin. Ignore it for now.
+            //***This is for the goblin.
             goblin.Draw(_spriteBatch);
 
             base.Draw(gameTime);
