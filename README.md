@@ -1,0 +1,5 @@
+- AI was not used in any part of this assignment
+- I had trouble updating the pushes, I forgot I had to do it until the blue bars on the left of the code screen showed that I changed something
+- I decided to commit/push every time I would complete one of the 6 tasks in Task 3
+- (1/6) steps were fully completed
+- I'm not sure how many overall pushes were executed because I tried a few times before the first real push went through and I had trouble throughout the entire assignment pushing to Github, probably around 4-5?
